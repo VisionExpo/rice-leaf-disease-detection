@@ -216,3 +216,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project-specific ignores
+
+# IDE
+.idea/
+
+# Local datasets
+data/raw/
+data/processed/
+data/external/
+
+# Model artifacts
+models/
+
+# Local environment files
+.env
