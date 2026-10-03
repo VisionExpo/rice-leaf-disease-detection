@@ -232,3 +232,5 @@ models/
 
 # Local environment files
 .env
+
+!data/split_manifest.csv
