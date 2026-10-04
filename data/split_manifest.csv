@@ -1,120 +1,120 @@
 image_path,class,split
-..\data\raw\Brown spot\DSC_0306.JPG,Brown spot,train
-..\data\raw\Brown spot\DSC_0302.JPG,Brown spot,validation
-..\data\raw\Brown spot\DSC_0109.jpg,Brown spot,train
-..\data\raw\Leaf smut\DSC_0506.jpg,Leaf smut,train
-..\data\raw\Brown spot\DSC_0121.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0701.jpg,Bacterial leaf blight,test
-..\data\raw\Bacterial leaf blight\DSC_0400.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0303.JPG,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0370.jpg,Bacterial leaf blight,validation
-..\data\raw\Bacterial leaf blight\DSC_0395.JPG,Bacterial leaf blight,train
-..\data\raw\Bacterial leaf blight\DSC_0390.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0315.jpg,Leaf smut,test
-..\data\raw\Leaf smut\DSC_0513.jpg,Leaf smut,train
-..\data\raw\Brown spot\DSC_0292.JPG,Brown spot,validation
-..\data\raw\Leaf smut\DSC_0320.JPG,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0510.jpg,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0399.JPG,Bacterial leaf blight,validation
-..\data\raw\Leaf smut\DSC_0514.jpg,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0378.JPG,Bacterial leaf blight,validation
-..\data\raw\Bacterial leaf blight\DSC_0389.JPG,Bacterial leaf blight,test
-..\data\raw\Brown spot\DSC_0305.JPG,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0365.JPG,Bacterial leaf blight,train
-..\data\raw\Bacterial leaf blight\DSC_0375.JPG,Bacterial leaf blight,validation
-..\data\raw\Brown spot\DSC_0299.JPG,Brown spot,train
-..\data\raw\Leaf smut\DSC_0331.JPG,Leaf smut,train
-..\data\raw\Brown spot\DSC_0111.jpg,Brown spot,train
-..\data\raw\Brown spot\DSC_0118.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0367.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0500.jpg,Leaf smut,test
-..\data\raw\Leaf smut\DSC_0318.JPG,Leaf smut,train
-..\data\raw\Brown spot\DSC_0104.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0405.JPG,Bacterial leaf blight,train
-..\data\raw\Bacterial leaf blight\DSC_0401.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0511.jpg,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0379.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0319.jpg,Leaf smut,train
-..\data\raw\Brown spot\DSC_0106.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0372.JPG,Bacterial leaf blight,train
-..\data\raw\Bacterial leaf blight\DSC_0366.jpg,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0335.JPG,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0502.jpg,Leaf smut,test
-..\data\raw\Bacterial leaf blight\DSC_0383.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0293.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0402.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0119.jpg,Brown spot,validation
-..\data\raw\Leaf smut\DSC_0317.JPG,Leaf smut,train
-..\data\raw\Brown spot\DSC_0112.jpg,Brown spot,train
-..\data\raw\Brown spot\DSC_0107.jpg,Brown spot,train
-..\data\raw\Leaf smut\DSC_0308.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0388.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0324.JPG,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0406.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0328.jpg,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0515.jpg,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0386.JPG,Bacterial leaf blight,validation
-..\data\raw\Bacterial leaf blight\DSC_0403.JPG,Bacterial leaf blight,train
-..\data\raw\Bacterial leaf blight\DSC_0702.jpg,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0394.jpg,Brown spot,test
-..\data\raw\Brown spot\DSC_0307.JPG,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0703.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0116.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0404.JPG,Bacterial leaf blight,validation
-..\data\raw\Bacterial leaf blight\DSC_0700.jpg,Bacterial leaf blight,test
-..\data\raw\Leaf smut\DSC_0504.jpg,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0313.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0398.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0327.JPG,Leaf smut,validation
-..\data\raw\Leaf smut\DSC_0309.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0384.JPG,Bacterial leaf blight,train
-..\data\raw\Bacterial leaf blight\DSC_0397.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0512.jpg,Leaf smut,validation
-..\data\raw\Brown spot\DSC_0114.jpg,Brown spot,train
-..\data\raw\Leaf smut\DSC_0338.JPG,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0336.jpg,Leaf smut,test
-..\data\raw\Leaf smut\DSC_0322.jpg,Leaf smut,validation
-..\data\raw\Brown spot\DSC_0296.jpg,Brown spot,train
-..\data\raw\Leaf smut\DSC_0312.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0392.JPG,Bacterial leaf blight,test
-..\data\raw\Bacterial leaf blight\DSC_0381.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0310.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0396.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0301.JPG,Brown spot,test
-..\data\raw\Brown spot\DSC_0117.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0393.JPG,Bacterial leaf blight,test
-..\data\raw\Brown spot\DSC_0108.jpg,Brown spot,train
-..\data\raw\Leaf smut\DSC_0316.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0373.JPG,Bacterial leaf blight,train
-..\data\raw\Leaf smut\DSC_0339.jpg,Leaf smut,validation
-..\data\raw\Brown spot\DSC_0323.JPG,Brown spot,train
-..\data\raw\Brown spot\DSC_0337.JPG,Brown spot,train
-..\data\raw\Leaf smut\DSC_0505.jpg,Leaf smut,train
-..\data\raw\Brown spot\DSC_0295.JPG,Brown spot,test
-..\data\raw\Leaf smut\DSC_0503.jpg,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0507.jpg,Leaf smut,train
-..\data\raw\Brown spot\DSC_0115.jpg,Brown spot,validation
-..\data\raw\Brown spot\DSC_0332.JPG,Brown spot,train
-..\data\raw\Brown spot\DSC_0329.jpg,Brown spot,train
-..\data\raw\Leaf smut\DSC_0321.JPG,Leaf smut,test
-..\data\raw\Brown spot\DSC_0113.jpg,Brown spot,train
-..\data\raw\Brown spot\DSC_0325.JPG,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0374.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0300.JPG,Brown spot,train
-..\data\raw\Leaf smut\DSC_0314.JPG,Leaf smut,train
-..\data\raw\Bacterial leaf blight\DSC_0382.JPG,Bacterial leaf blight,test
-..\data\raw\Brown spot\DSC_0110.jpg,Brown spot,validation
-..\data\raw\Leaf smut\DSC_0501.jpg,Leaf smut,validation
-..\data\raw\Leaf smut\DSC_0330.jpg,Leaf smut,test
-..\data\raw\Bacterial leaf blight\DSC_0376.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0105.jpg,Brown spot,validation
-..\data\raw\Brown spot\DSC_0333.JPG,Brown spot,train
-..\data\raw\Brown spot\DSC_0101.jpg,Brown spot,test
-..\data\raw\Bacterial leaf blight\DSC_0380.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0100.jpg,Brown spot,train
-..\data\raw\Bacterial leaf blight\DSC_0377.JPG,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0391.jpg,Brown spot,test
-..\data\raw\Leaf smut\DSC_0509.jpg,Leaf smut,train
-..\data\raw\Leaf smut\DSC_0516.jpg,Leaf smut,validation
-..\data\raw\Bacterial leaf blight\DSC_0385.jpg,Bacterial leaf blight,train
-..\data\raw\Brown spot\DSC_0304.JPG,Brown spot,test
+data/raw/Brown spot/DSC_0306.JPG,Brown spot,train
+data/raw/Brown spot/DSC_0302.JPG,Brown spot,validation
+data/raw/Brown spot/DSC_0109.jpg,Brown spot,train
+data/raw/Leaf smut/DSC_0506.jpg,Leaf smut,train
+data/raw/Brown spot/DSC_0121.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0701.jpg,Bacterial leaf blight,test
+data/raw/Bacterial leaf blight/DSC_0400.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0303.JPG,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0370.jpg,Bacterial leaf blight,validation
+data/raw/Bacterial leaf blight/DSC_0395.JPG,Bacterial leaf blight,train
+data/raw/Bacterial leaf blight/DSC_0390.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0315.jpg,Leaf smut,test
+data/raw/Leaf smut/DSC_0513.jpg,Leaf smut,train
+data/raw/Brown spot/DSC_0292.JPG,Brown spot,validation
+data/raw/Leaf smut/DSC_0320.JPG,Leaf smut,train
+data/raw/Leaf smut/DSC_0510.jpg,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0399.JPG,Bacterial leaf blight,validation
+data/raw/Leaf smut/DSC_0514.jpg,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0378.JPG,Bacterial leaf blight,validation
+data/raw/Bacterial leaf blight/DSC_0389.JPG,Bacterial leaf blight,test
+data/raw/Brown spot/DSC_0305.JPG,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0365.JPG,Bacterial leaf blight,train
+data/raw/Bacterial leaf blight/DSC_0375.JPG,Bacterial leaf blight,validation
+data/raw/Brown spot/DSC_0299.JPG,Brown spot,train
+data/raw/Leaf smut/DSC_0331.JPG,Leaf smut,train
+data/raw/Brown spot/DSC_0111.jpg,Brown spot,train
+data/raw/Brown spot/DSC_0118.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0367.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0500.jpg,Leaf smut,test
+data/raw/Leaf smut/DSC_0318.JPG,Leaf smut,train
+data/raw/Brown spot/DSC_0104.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0405.JPG,Bacterial leaf blight,train
+data/raw/Bacterial leaf blight/DSC_0401.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0511.jpg,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0379.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0319.jpg,Leaf smut,train
+data/raw/Brown spot/DSC_0106.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0372.JPG,Bacterial leaf blight,train
+data/raw/Bacterial leaf blight/DSC_0366.jpg,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0335.JPG,Leaf smut,train
+data/raw/Leaf smut/DSC_0502.jpg,Leaf smut,test
+data/raw/Bacterial leaf blight/DSC_0383.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0293.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0402.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0119.jpg,Brown spot,validation
+data/raw/Leaf smut/DSC_0317.JPG,Leaf smut,train
+data/raw/Brown spot/DSC_0112.jpg,Brown spot,train
+data/raw/Brown spot/DSC_0107.jpg,Brown spot,train
+data/raw/Leaf smut/DSC_0308.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0388.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0324.JPG,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0406.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0328.jpg,Leaf smut,train
+data/raw/Leaf smut/DSC_0515.jpg,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0386.JPG,Bacterial leaf blight,validation
+data/raw/Bacterial leaf blight/DSC_0403.JPG,Bacterial leaf blight,train
+data/raw/Bacterial leaf blight/DSC_0702.jpg,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0394.jpg,Brown spot,test
+data/raw/Brown spot/DSC_0307.JPG,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0703.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0116.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0404.JPG,Bacterial leaf blight,validation
+data/raw/Bacterial leaf blight/DSC_0700.jpg,Bacterial leaf blight,test
+data/raw/Leaf smut/DSC_0504.jpg,Leaf smut,train
+data/raw/Leaf smut/DSC_0313.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0398.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0327.JPG,Leaf smut,validation
+data/raw/Leaf smut/DSC_0309.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0384.JPG,Bacterial leaf blight,train
+data/raw/Bacterial leaf blight/DSC_0397.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0512.jpg,Leaf smut,validation
+data/raw/Brown spot/DSC_0114.jpg,Brown spot,train
+data/raw/Leaf smut/DSC_0338.JPG,Leaf smut,train
+data/raw/Leaf smut/DSC_0336.jpg,Leaf smut,test
+data/raw/Leaf smut/DSC_0322.jpg,Leaf smut,validation
+data/raw/Brown spot/DSC_0296.jpg,Brown spot,train
+data/raw/Leaf smut/DSC_0312.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0392.JPG,Bacterial leaf blight,test
+data/raw/Bacterial leaf blight/DSC_0381.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0310.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0396.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0301.JPG,Brown spot,test
+data/raw/Brown spot/DSC_0117.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0393.JPG,Bacterial leaf blight,test
+data/raw/Brown spot/DSC_0108.jpg,Brown spot,train
+data/raw/Leaf smut/DSC_0316.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0373.JPG,Bacterial leaf blight,train
+data/raw/Leaf smut/DSC_0339.jpg,Leaf smut,validation
+data/raw/Brown spot/DSC_0323.JPG,Brown spot,train
+data/raw/Brown spot/DSC_0337.JPG,Brown spot,train
+data/raw/Leaf smut/DSC_0505.jpg,Leaf smut,train
+data/raw/Brown spot/DSC_0295.JPG,Brown spot,test
+data/raw/Leaf smut/DSC_0503.jpg,Leaf smut,train
+data/raw/Leaf smut/DSC_0507.jpg,Leaf smut,train
+data/raw/Brown spot/DSC_0115.jpg,Brown spot,validation
+data/raw/Brown spot/DSC_0332.JPG,Brown spot,train
+data/raw/Brown spot/DSC_0329.jpg,Brown spot,train
+data/raw/Leaf smut/DSC_0321.JPG,Leaf smut,test
+data/raw/Brown spot/DSC_0113.jpg,Brown spot,train
+data/raw/Brown spot/DSC_0325.JPG,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0374.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0300.JPG,Brown spot,train
+data/raw/Leaf smut/DSC_0314.JPG,Leaf smut,train
+data/raw/Bacterial leaf blight/DSC_0382.JPG,Bacterial leaf blight,test
+data/raw/Brown spot/DSC_0110.jpg,Brown spot,validation
+data/raw/Leaf smut/DSC_0501.jpg,Leaf smut,validation
+data/raw/Leaf smut/DSC_0330.jpg,Leaf smut,test
+data/raw/Bacterial leaf blight/DSC_0376.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0105.jpg,Brown spot,validation
+data/raw/Brown spot/DSC_0333.JPG,Brown spot,train
+data/raw/Brown spot/DSC_0101.jpg,Brown spot,test
+data/raw/Bacterial leaf blight/DSC_0380.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0100.jpg,Brown spot,train
+data/raw/Bacterial leaf blight/DSC_0377.JPG,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0391.jpg,Brown spot,test
+data/raw/Leaf smut/DSC_0509.jpg,Leaf smut,train
+data/raw/Leaf smut/DSC_0516.jpg,Leaf smut,validation
+data/raw/Bacterial leaf blight/DSC_0385.jpg,Bacterial leaf blight,train
+data/raw/Brown spot/DSC_0304.JPG,Brown spot,test
