@@ -93,7 +93,13 @@ async def predict(file: UploadFile = File(...)) -> PredictionResponse:
     except FileNotFoundError as exc:
         raise HTTPException(
             status_code=500,
-            detail="The model or a requires file could not be found."
+            detail="The model or a required file could not be found."
+        ) from exc
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail="Prediction failed. Please try again later."
         ) from exc
 
     finally:

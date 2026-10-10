@@ -1,4 +1,5 @@
 import io
+from io import BytesIO
 
 import pytest
 from fastapi.testclient import TestClient
@@ -113,3 +114,52 @@ def test_predict_rejects_empty_upload():
     assert response.json()["detail"] == (
         "The uploaded file is empty."
     )
+
+def test_predict_rejects_oversized_upload():
+    large_content = b"x" * (api_main.MAX_UPLOAD_SIZE + 1)
+
+    response = client.post(
+        "/predict",
+        files={
+            "file": (
+                "large.jpg",
+                large_content,
+                "image/jpeg",
+            )
+        },
+    )
+
+    assert response.status_code == 413
+
+def test_predict_rejects_missing_file():
+    response = client.post("/predict")
+
+    assert response.status_code == 422
+
+def test_predict_returns_generic_error_when_inference_fails(monkeypatch):
+    def fail_prediction(image_path):
+        raise RuntimeError("internal model details")
+
+    monkeypatch.setattr(api_main, "predict_image", fail_prediction)
+
+    image_buffer = BytesIO()
+    Image.new("RGB", (10, 10), color="green").save(
+        image_buffer, format="JPEG"
+    )
+
+    response = client.post(
+        "/predict",
+        files={
+            "file": (
+                "leaf.jpg",
+                image_buffer.getvalue(),
+                "image/jpeg",
+            )
+        },
+    )
+
+    assert response.status_code == 500
+    assert response.json()["detail"] == (
+        "Prediction failed. Please try again later."
+    )
+    assert "internal model details" not in response.text
