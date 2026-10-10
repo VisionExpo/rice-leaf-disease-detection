@@ -7,7 +7,6 @@ from PIL import Image
 
 import api.main as api_main
 
-
 client = TestClient(api_main.app)
 
 
@@ -136,7 +135,8 @@ def test_predict_rejects_missing_file():
 
     assert response.status_code == 422
 
-def test_predict_returns_generic_error_when_inference_fails(monkeypatch):
+def test_predict_returns_generic_error_when_inference_fails(
+        monkeypatch, caplog):
     def fail_prediction(image_path):
         raise RuntimeError("internal model details")
 
@@ -163,3 +163,7 @@ def test_predict_returns_generic_error_when_inference_fails(monkeypatch):
         "Prediction failed. Please try again later."
     )
     assert "internal model details" not in response.text
+    assert (
+        "Unexpected error during rice leaf disease prediction."
+        in caplog.text
+    )

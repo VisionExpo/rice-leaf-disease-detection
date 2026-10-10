@@ -1,4 +1,5 @@
 import io
+import logging
 import tempfile
 from pathlib import Path
 
@@ -8,15 +9,17 @@ from pydantic import BaseModel
 
 from src.inference.predict import predict_image
 
-
 app = FastAPI(
     title="Rice Leaf Disease Detection API",
     description="API for classifying rice leaf diseases using MobileNetV2.",
     version="0.1.0"
 )
 
+logger = logging.getLogger(__name__)
+
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png"}
-MAX_UPLOAD_SIZE = 10 * 1024 * 1024 # 10 MB
+MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB
+
 
 class PredictionResponse(BaseModel):
     predicted_class : str
@@ -37,7 +40,7 @@ def health_check() -> dict[str, str]:
     tags=["Prediction"]
 )
 
-async def predict(file: UploadFile = File(...)) -> PredictionResponse:
+async def predict(file: UploadFile = File(...)) -> PredictionResponse: # noqa: B008
     """Predict the disease shown in an uploaded rice leaf image."""
 
     suffix = Path(file.filename or "").suffix.lower()
@@ -91,12 +94,18 @@ async def predict(file: UploadFile = File(...)) -> PredictionResponse:
         return PredictionResponse(**result)
 
     except FileNotFoundError as exc:
+        logger.exception(
+            "Prediction failed because a required file was not found."
+        )
         raise HTTPException(
             status_code=500,
             detail="The model or a required file could not be found."
         ) from exc
 
     except Exception as exc:
+        logger.exception(
+            "Unexpected error during rice leaf disease prediction."
+        )
         raise HTTPException(
             status_code=500,
             detail="Prediction failed. Please try again later."

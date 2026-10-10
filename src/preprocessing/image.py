@@ -3,7 +3,6 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageOps
 
-
 TARGET_WIDTH = 448
 TARGET_HEIGHT = 128
 

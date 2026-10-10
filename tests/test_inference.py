@@ -1,6 +1,4 @@
-import json
 
-import numpy as np
 
 from src.inference.predict import load_class_names
 

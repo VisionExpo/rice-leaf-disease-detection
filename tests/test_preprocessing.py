@@ -1,10 +1,10 @@
 from pathlib import Path
-from unittest import result
 
 import numpy as np
 from PIL import Image
 
 from src.preprocessing.image import preprocess_image
+
 
 def test_preprocess_image_output_shape(tmp_path: Path) -> None:
     """Processed image should have shape (128, 448, 3)."""
