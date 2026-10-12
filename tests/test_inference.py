@@ -136,3 +136,24 @@ def test_predict_image_rejects_missing_image(tmp_path, monkeypatch):
 
     with pytest.raises(FileNotFoundError, match="Image not found"):
         inference.predict_image(missing_path)
+
+
+def test_load_model_rejects_missing_file(tmp_path, monkeypatch):
+    missing_model_path = tmp_path / "missing.keras"
+
+    monkeypatch.setattr(
+        inference,
+        "MODEL_PATH",
+        missing_model_path,
+    )
+
+    inference.load_model.cache_clear()
+
+    try:
+        with pytest.raises(
+            FileNotFoundError,
+            match="Model file not found",
+        ):
+            inference.load_model()
+    finally:
+        inference.load_model.cache_clear()
