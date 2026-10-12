@@ -1,20 +1,87 @@
+import json
 
+import numpy as np
+import pytest
 
-from src.inference.predict import load_class_names
+import src.inference.predict as inference
 
 
 def test_class_names_exist():
-    class_names = load_class_names()
+    class_names = inference.load_class_names()
 
     assert isinstance(class_names, list)
     assert len(class_names) == 3
 
 
 def test_class_names_are_expected():
-    class_names = load_class_names()
+    class_names = inference.load_class_names()
 
     assert class_names == [
         "Bacterial leaf blight",
         "Brown spot",
         "Leaf smut",
     ]
+
+
+@pytest.mark.parametrize(
+    "invalid_data",
+    [
+        "not-a-list",
+        [],
+        ["Bacterial leaf blight", 42],
+        ["Bacterial leaf blight", "Bacterial leaf blight"],
+        [""],
+    ],
+)
+def test_load_class_names_rejects_invalid_data(
+    tmp_path, monkeypatch, invalid_data
+):
+    class_names_path = tmp_path / "class_names.json"
+    class_names_path.write_text(
+        json.dumps(invalid_data),
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr(
+        inference,
+        "CLASS_NAMES_PATH",
+        class_names_path,
+    )
+
+    inference.load_class_names.cache_clear()
+
+    try:
+        with pytest.raises(ValueError):
+            inference.load_class_names()
+    finally:
+        inference.load_class_names.cache_clear()
+
+
+def test_predict_image_rejects_mismatched_class_count(
+    tmp_path, monkeypatch
+):
+    class FakeModel:
+        def predict(self, image_batch, verbose=0):
+            return np.array([[0.7, 0.2, 0.1]])
+
+    image_path = tmp_path / "leaf.jpg"
+    image_path.write_bytes(b"test image")
+
+    monkeypatch.setattr(
+        inference,
+        "preprocess_image",
+        lambda path: np.zeros((128, 448, 3), dtype=np.float32),
+    )
+    monkeypatch.setattr(
+        inference,
+        "load_model",
+        lambda: FakeModel(),
+    )
+    monkeypatch.setattr(
+        inference,
+        "load_class_names",
+        lambda: ["Bacterial leaf blight", "Brown spot"],
+    )
+
+    with pytest.raises(ValueError, match="probabilities"):
+        inference.predict_image(image_path)

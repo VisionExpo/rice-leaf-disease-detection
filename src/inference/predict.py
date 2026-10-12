@@ -28,14 +28,32 @@ def load_model() -> tf.keras.Model:
 
 @lru_cache(maxsize=1)
 def load_class_names() -> list[str]:
-    """Load class names once and reuse them."""
+    """Load and validate class names once, then reuse them."""
     if not CLASS_NAMES_PATH.exists():
         raise FileNotFoundError(
             f"Class names file not found: {CLASS_NAMES_PATH}"
         )
 
     with open(CLASS_NAMES_PATH, "r", encoding="utf-8") as file:
-        return json.load(file)
+        class_names = json.load(file)
+
+    if not isinstance(class_names, list) or not class_names:
+        raise ValueError(
+            "Class names must be a non-empty JSON list."
+        )
+
+    if any(
+        not isinstance(name, str) or not name.strip()
+        for name in class_names
+    ):
+        raise ValueError(
+            "Every class name must be a non-empty string."
+        )
+
+    if len(set(class_names)) != len(class_names):
+        raise ValueError("Class names must be unique.")
+
+    return class_names
 
 def predict_image(image_path: str | Path) -> dict:
     """
@@ -67,10 +85,22 @@ def predict_image(image_path: str | Path) -> dict:
     class_names = load_class_names()
 
     #Predict
-    probabilities = model.predict(
+    model_outputs = model.predict(
         image_batch,
         verbose=0
-    )[0]
+    )
+
+    if model_outputs.ndim != 2 or model_outputs.shape[0] != 1:
+        raise ValueError(
+            "Model output must contain one row of class probabilities."
+        )
+
+    probabilities = model_outputs[0]
+
+    if len(probabilities) != len(class_names):
+        raise ValueError(
+            "Number of output probabilities does not match the class names."
+        )
 
     predicted_index = int(np.argmax(probabilities))
     predicted_class = class_names[predicted_index]
