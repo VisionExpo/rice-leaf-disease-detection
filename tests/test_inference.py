@@ -120,3 +120,19 @@ def test_predict_image_returns_expected_result(tmp_path, monkeypatch):
         "Brown spot": pytest.approx(0.15),
         "Leaf smut": pytest.approx(0.05),
     }
+
+
+def test_predict_image_rejects_missing_image(tmp_path, monkeypatch):
+    missing_path = tmp_path / "missing.jpg"
+
+    def fail_if_preprocessed(image_path):
+        pytest.fail("Preprocessing should not run for a missing image.")
+
+    monkeypatch.setattr(
+        inference,
+        "preprocess_image",
+        fail_if_preprocessed,
+    )
+
+    with pytest.raises(FileNotFoundError, match="Image not found"):
+        inference.predict_image(missing_path)
