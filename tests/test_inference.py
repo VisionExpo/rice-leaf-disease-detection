@@ -85,3 +85,38 @@ def test_predict_image_rejects_mismatched_class_count(
 
     with pytest.raises(ValueError, match="probabilities"):
         inference.predict_image(image_path)
+
+
+def test_predict_image_returns_expected_result(tmp_path, monkeypatch):
+    class FakeModel:
+        def predict(self, image_batch, verbose=0):
+            return np.array([[0.8, 0.15, 0.05]])
+
+    image_path = tmp_path / "leaf.jpg"
+    image_path.write_bytes(b"test image")
+
+    class_names = [
+        "Bacterial leaf blight",
+        "Brown spot",
+        "Leaf smut",
+    ]
+
+    monkeypatch.setattr(
+        inference,
+        "preprocess_image",
+        lambda path: np.zeros((128, 448, 3), dtype=np.float32),
+    )
+    monkeypatch.setattr(inference, "load_model", lambda: FakeModel())
+    monkeypatch.setattr(
+        inference, "load_class_names", lambda: class_names
+    )
+
+    result = inference.predict_image(image_path)
+
+    assert result["predicted_class"] == "Bacterial leaf blight"
+    assert result["confidence"] == pytest.approx(0.8)
+    assert result["probabilities"] == {
+        "Bacterial leaf blight": pytest.approx(0.8),
+        "Brown spot": pytest.approx(0.15),
+        "Leaf smut": pytest.approx(0.05),
+    }
