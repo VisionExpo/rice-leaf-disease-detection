@@ -167,3 +167,45 @@ def test_predict_returns_generic_error_when_inference_fails(
         "Unexpected error during rice leaf disease prediction."
         in caplog.text
     )
+
+
+def test_readiness_check_returns_ready(monkeypatch):
+    monkeypatch.setattr(
+        api_main,
+        "load_model",
+        lambda: object(),
+    )
+    monkeypatch.setattr(
+        api_main,
+        "load_class_names",
+        lambda: [
+            "Bacterial leaf blight",
+            "Brown spot",
+            "Leaf smut",
+        ],
+    )
+
+    response = client.get("/ready")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "ready",
+        "service": "rice-leaf-disease-detection",
+    }
+
+
+def test_readiness_check_returns_503_when_model_loading_fails(
+    monkeypatch,
+):
+    def fail_loading():
+        raise RuntimeError("internal model details")
+
+    monkeypatch.setattr(api_main, "load_model", fail_loading)
+
+    response = client.get("/ready")
+
+    assert response.status_code == 503
+    assert response.json()["detail"] == (
+        "Prediction service is not ready."
+    )
+    assert "internal model details" not in response.text

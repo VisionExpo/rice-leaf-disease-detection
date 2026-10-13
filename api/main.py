@@ -7,7 +7,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel
 
-from src.inference.predict import predict_image
+from src.inference.predict import load_class_names, load_model, predict_image
 
 app = FastAPI(
     title="Rice Leaf Disease Detection API",
@@ -32,6 +32,24 @@ def health_check() -> dict[str, str]:
     return {
         "status": "healthy",
         "service": "rice-leaf-disease-detection"
+    }
+
+@app.get("/ready", tags=["Health"])
+def readiness_check() -> dict[str, str]:
+    """Check whether the prediction service is ready."""
+    try:
+        load_model()
+        load_class_names()
+    except Exception as exc:
+        logger.exception("API readiness check failed.")
+        raise HTTPException(
+            status_code=503,
+            detail="Prediction service is not ready.",
+        ) from exc
+
+    return {
+        "status": "ready",
+        "service": "rice-leaf-disease-detection",
     }
 
 @app.post(

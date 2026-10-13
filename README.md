@@ -181,7 +181,35 @@ Example response:
 }
 ```
 
-### 2. Predict Rice Leaf Disease
+### 2. Readiness Check
+
+**Endpoint:** `GET /ready`
+
+Checks whether the prediction service is ready by verifying that the trained model and class-name metadata can be loaded.
+
+Example successful response:
+
+```json
+{
+  "status": "ready",
+  "service": "rice-leaf-disease-detection"
+}
+```
+
+If model or class-name loading fails, the endpoint returns HTTP `503 Service Unavailable` with a generic error response:
+
+```json
+{
+  "detail": "Prediction service is not ready."
+}
+```
+
+This endpoint is useful for determining whether the service can handle prediction requests. It does not guarantee that every future prediction will succeed.
+
+
+
+
+### 3. Predict Rice Leaf Disease
 
 **Endpoint:** `POST /predict`
 
