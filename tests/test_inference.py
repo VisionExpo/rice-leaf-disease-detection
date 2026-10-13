@@ -157,3 +157,24 @@ def test_load_model_rejects_missing_file(tmp_path, monkeypatch):
             inference.load_model()
     finally:
         inference.load_model.cache_clear()
+
+
+def test_load_class_names_rejects_missing_file(tmp_path, monkeypatch):
+    missing_path = tmp_path / "missing_class_names.json"
+
+    monkeypatch.setattr(
+        inference,
+        "CLASS_NAMES_PATH",
+        missing_path,
+    )
+
+    inference.load_class_names.cache_clear()
+
+    try:
+        with pytest.raises(
+            FileNotFoundError,
+            match="Class names file not found",
+        ):
+            inference.load_class_names()
+    finally:
+        inference.load_class_names.cache_clear()
