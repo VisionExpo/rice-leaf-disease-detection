@@ -164,62 +164,75 @@ Open the Swagger UI in your browser:
 
 You can use this interface to inspect endpoints and upload an image for prediction.
 
-## Running with Docker
+## Running with Docker Compose
 
 ### Prerequisites
 
 - Docker Desktop installed and running.
-- The trained model artifacts available locally.
+- The trained model artifacts available locally in the `models/` directory.
 
-### Build the image
+### Start the application
 
-From the repository root:
-
-```powershell
-docker build -t rice-leaf-disease-api .
-```
-
-### Start the container
-
-The trained model files are excluded from the Docker image and mounted from the local `models/` directory at runtime.
-
-On Windows PowerShell:
+From the repository root, build the image and start the API:
 
 ```powershell
-docker run -d `
-  --name rice-leaf-disease-api `
-  -p 8000:8000 `
-  --mount "type=bind,source=$($PWD.Path)\models,target=/app/models,readonly" `
-  rice-leaf-disease-api
+docker compose up -d --build
 ```
 
-### Verify deployment
+Docker Compose reads `compose.yaml`, builds the API image, mounts the local model directory as read-only, publishes port 8000, and configures a container health check.
 
-Check the service health:
+### Check deployment status
+
+```powershell
+docker compose ps
+docker compose logs api
+```
+
+Wait until the API service reports `healthy`.
+
+### Verify the API
+
+Health check:
 
 ```powershell
 Invoke-RestMethod http://127.0.0.1:8000/health
 ```
 
-Check model readiness:
+Model readiness:
 
 ```powershell
 Invoke-RestMethod http://127.0.0.1:8000/ready
 ```
 
-Open the interactive API documentation at:
+Interactive API documentation:
 
 `http://127.0.0.1:8000/docs`
 
-### Stop and remove the container
+### Restart the API
 
 ```powershell
-docker stop rice-leaf-disease-api
-docker rm rice-leaf-disease-api
+docker compose restart api
+docker compose ps
 ```
 
-The local `models/` directory must contain `mobilenetv2_final.keras` and `class_names.json` before starting the container.
+Wait until the service becomes healthy again.
 
+### Stop the deployment
+
+```powershell
+docker compose down
+```
+
+Stopping the Compose deployment removes its container and network, but preserves the local model files.
+
+### Model artifacts
+
+The model files are excluded from Git and the Docker image. Before starting the application, ensure the local `models/` directory contains:
+
+- `mobilenetv2_final.keras`
+- `class_names.json`
+
+The model directory is mounted into the container as read-only at `/app/models`.
 
 
 ## API Endpoints
