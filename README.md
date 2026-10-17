@@ -164,6 +164,64 @@ Open the Swagger UI in your browser:
 
 You can use this interface to inspect endpoints and upload an image for prediction.
 
+## Running with Docker
+
+### Prerequisites
+
+- Docker Desktop installed and running.
+- The trained model artifacts available locally.
+
+### Build the image
+
+From the repository root:
+
+```powershell
+docker build -t rice-leaf-disease-api .
+```
+
+### Start the container
+
+The trained model files are excluded from the Docker image and mounted from the local `models/` directory at runtime.
+
+On Windows PowerShell:
+
+```powershell
+docker run -d `
+  --name rice-leaf-disease-api `
+  -p 8000:8000 `
+  --mount "type=bind,source=$($PWD.Path)\models,target=/app/models,readonly" `
+  rice-leaf-disease-api
+```
+
+### Verify deployment
+
+Check the service health:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
+```
+
+Check model readiness:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/ready
+```
+
+Open the interactive API documentation at:
+
+`http://127.0.0.1:8000/docs`
+
+### Stop and remove the container
+
+```powershell
+docker stop rice-leaf-disease-api
+docker rm rice-leaf-disease-api
+```
+
+The local `models/` directory must contain `mobilenetv2_final.keras` and `class_names.json` before starting the container.
+
+
+
 ## API Endpoints
 
 ### 1. Health Check
